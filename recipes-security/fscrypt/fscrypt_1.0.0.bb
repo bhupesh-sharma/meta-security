@@ -22,11 +22,6 @@ S = "${WORKDIR}/git"
 inherit go
 inherit goarch
 
-do_compile_prepend() {
-	rm -f ${S}/src/${GO_IMPORT}/Gopkg.toml
-	rm -f ${S}/src/${GO_IMPORT}/Gopkg.lock
-}
-
 do_compile() {
 	export GOARCH=${TARGET_GOARCH}
 	export GOROOT="${STAGING_LIBDIR_NATIVE}/${TARGET_SYS}/go"
